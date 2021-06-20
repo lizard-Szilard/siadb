@@ -6,7 +6,7 @@ public class Biodata {
 	private String nama;
 	private String alamat;
 	private String pekerjaan;
-	private String phone;
+	private String nomerhandphone;
 	private String email;
 
 	public String getId() {
@@ -42,11 +42,11 @@ public class Biodata {
 	}
 
 	public String getPhone() {
-		return phone;
+		return nomerhandphone;
 	}
 
-	public void setPhone(String nomorhandphone) {
-		this.phone = phone;
+	public void setPhone(String nomerhandphone) {
+		this.nomerhandphone = nomerhandphone;
 	}
 
 	public String getEmail() {

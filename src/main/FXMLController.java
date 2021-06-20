@@ -43,8 +43,8 @@ public class FXMLController implements Initializable {
 	private void TableViewBiodata() {
 		ObservableList<Biodata> listBiodata = FXCollections.observableArrayList();
 
-		String user = "username";
-		String passwd = "passwd";
+		String user = "myMSQLWINDOWS";
+		String passwd = "msqlwindowsapp1";
 		String url = "jdbc:mysql://localhost:3306/siadb";
 
 		try ( Connection connection = DriverManager.getConnection(url, user, passwd)) {
@@ -73,10 +73,10 @@ public class FXMLController implements Initializable {
 		}
 
 		idTableColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-		namaTableColumn.setCellValueFactory(new PropertyValueFactory<>("Nama"));
+		namaTableColumn.setCellValueFactory(new PropertyValueFactory<>("nama"));
 		alamatTableColumn.setCellValueFactory(new PropertyValueFactory<>("Alamat"));
 		pekerjaanTableColumn.setCellValueFactory(new PropertyValueFactory<>("Pekerjaan"));
-		nomorHandphoneTableColumn.setCellValueFactory(new PropertyValueFactory<>("nomorhandphone"));
+		nomorHandphoneTableColumn.setCellValueFactory(new PropertyValueFactory<>("Phone"));
 		emailTableColumn.setCellValueFactory(new PropertyValueFactory<>("Email"));
 
 		biodataTableView.setItems(listBiodata);
