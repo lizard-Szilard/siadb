@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package main;
 
 import java.net.URL;
@@ -8,11 +12,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-
 import java.sql.*;
 import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
 import javafx.scene.control.cell.PropertyValueFactory;
+
 
 public class FXMLController implements Initializable {
 
@@ -31,11 +35,7 @@ public class FXMLController implements Initializable {
 	@FXML
 	private TableColumn<?, ?> emailTableColumn;
 
-	/**
-	 *
-	 * @param url
-	 * @param rb
-	 */
+	
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
 		TableViewBiodata();
@@ -43,8 +43,8 @@ public class FXMLController implements Initializable {
 	private void TableViewBiodata() {
 		ObservableList<Biodata> listBiodata = FXCollections.observableArrayList();
 
-		String user = "myMSQLWINDOWS";
-		String passwd = "msqlwindowsapp1";
+		String user = "username";
+		String passwd = "passwd";
 		String url = "jdbc:mysql://localhost:3306/siadb";
 
 		try ( Connection connection = DriverManager.getConnection(url, user, passwd)) {
@@ -58,7 +58,6 @@ public class FXMLController implements Initializable {
 				String nomorHandphoneTable = resultSet.getString("nomorhandphone");
 				String emailTable = resultSet.getString("email");
 
-				
 				Biodata biodata = new Biodata();
 				biodata.setId(idTable);
 				biodata.setNama(namaTable);
@@ -73,11 +72,11 @@ public class FXMLController implements Initializable {
 			exception.printStackTrace();
 		}
 
-		idTableColumn.setCellValueFactory(new PropertyValueFactory<>("Id"));
+		idTableColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
 		namaTableColumn.setCellValueFactory(new PropertyValueFactory<>("Nama"));
 		alamatTableColumn.setCellValueFactory(new PropertyValueFactory<>("Alamat"));
 		pekerjaanTableColumn.setCellValueFactory(new PropertyValueFactory<>("Pekerjaan"));
-		nomorHandphoneTableColumn.setCellValueFactory(new PropertyValueFactory<>("Nomor Handphone"));
+		nomorHandphoneTableColumn.setCellValueFactory(new PropertyValueFactory<>("nomorhandphone"));
 		emailTableColumn.setCellValueFactory(new PropertyValueFactory<>("Email"));
 
 		biodataTableView.setItems(listBiodata);
