@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.FXMLController">
+   <children>
+      <Label prefHeight="43.0" prefWidth="192.0" text="Tabel Biodata">
+         <font>
+            <Font size="29.0" />
+         </font>
+         <padding>
+            <Insets left="10.0" top="10.0" />
+         </padding>
+      </Label>
+      <TableView fx:id="biodataTableView">
+        <columns>
+          <TableColumn fx:id="idTableColumn" prefWidth="42.0" text="Id" />
+          <TableColumn fx:id="namaTableColumn" prefWidth="71.0" text="Nama" />
+            <TableColumn fx:id="alamatTableColumn" prefWidth="125.0" text="Alamat" />
+            <TableColumn fx:id="pekerjaanTableColumn" prefWidth="88.0" text="Pekerjaan" />
+            <TableColumn fx:id="nomorHandphoneTableColumn" prefWidth="88.0" text="Nomor Handphone" />
+            <TableColumn fx:id="emailTableColumn" prefWidth="103.0" text="Email" />
+        </columns>
+      </TableView>
+   </children>
+</VBox>
